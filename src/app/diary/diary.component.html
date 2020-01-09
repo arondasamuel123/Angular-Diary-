@@ -1,0 +1,46 @@
+<div class="container-fluid">
+<h2>Diary Entries</h2>
+
+<div class="row">
+<div class="col-md-6">
+  <div class="col-md-12">
+
+    <div *ngFor='let entry of entries; let index=i'>
+      <h4> {{entry.name}}</h4>
+      <h4>{{entry.entry}}</h4>
+       <h4> Written on  {{entry.entryDate|date}}   </h4>
+
+       <button (click)="deleteEntry(i)" class="btn btn-outline-danger">Delete Entry</button>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+  <div class="col-md-12">
+    <app-diary-form></app-diary-form>
+  </div>
+
+</div>
+
+
+
+
+
+
+</div>
