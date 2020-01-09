@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {Diary} from '../diary';
-import { globalAgent } from 'http';
+
 
 @Component({
   selector: 'app-diary',
@@ -12,9 +12,7 @@ export class DiaryComponent implements OnInit {
 
   @Output () isDeleted = new EventEmitter<boolean>();
   entries: Diary[] = [
-    new Diary(1, 'Entry 001', 'First time writing in my diary', new Date(2020, 1, 9)),
-    new Diary(2, 'Entry 002', 'My charger blew which has pissed me off', new Date(2020, 1, 8)),
-    new Diary(3, 'Entry 003','Met someone today with a type c charger very nice person', new Date(2020,1,9))
+
 
   ];
 
@@ -28,10 +26,11 @@ export class DiaryComponent implements OnInit {
 
   }
 
-  addEntry(entry) {
+  addNewEntry(entry) {
     const entryLength = this.entries.length;
-    entry.id = entry.length+ 1;
+    entry.id = entryLength + 1;
     entry.entryDate = new Date(entry.entryDate);
+    this.entries.push(entry);
 
   }
 

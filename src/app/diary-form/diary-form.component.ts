@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {Diary} from '../diary';
 
 @Component({
@@ -7,9 +7,14 @@ import {Diary} from '../diary';
   styleUrls: ['./diary-form.component.css']
 })
 export class DiaryFormComponent implements OnInit {
-  
-newEntry = new Diary(0, '', '', new Date());
 
+newEntry = new Diary(0, '', '', new Date());
+@Output() addEntry = new EventEmitter<Diary> ();
+
+submitEntry() {
+  this.addEntry.emit(this.newEntry);
+  this.newEntry = new Diary(0, '', '', new Date());
+}
 
   constructor() { }
 

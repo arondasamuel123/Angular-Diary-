@@ -6,7 +6,7 @@
   <div class="col-md-12">
 
     <div *ngFor='let entry of entries; let index=i'>
-      <h4> {{entry.name}}</h4>
+      <span appHighlightText style="user-select: none;"> {{entry.name}}</span>
       <h4>{{entry.entry}}</h4>
        <h4> Written on  {{entry.entryDate|date}}   </h4>
 
@@ -33,7 +33,7 @@
 <br>
 <br>
   <div class="col-md-12">
-    <app-diary-form></app-diary-form>
+    <app-diary-form (addEntry)="addNewEntry($event)"></app-diary-form>
   </div>
 
 </div>

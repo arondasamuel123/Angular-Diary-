@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DiaryFormComponent } from './diary-form/diary-form.component';
 import { DiaryComponent } from './diary/diary.component';
+import { HighlightTextDirective } from './highlight-text.directive';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { DiaryComponent } from './diary/diary.component';
     AppComponent,
     DiaryFormComponent,
     DiaryComponent,
+    HighlightTextDirective,
    
   ],
   imports: [
